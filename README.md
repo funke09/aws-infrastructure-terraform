@@ -2,20 +2,20 @@
 Terraform configurations for AWS infrastructure with modular design and multi-environment support.
 ## **Prerequisites**
 
-Terraform >= 1.0.0
-AWS CLI >= 2.0.0
-Git
-Required AWS IAM Permissions:
-
-EC2: RunInstances, DescribeInstances
-VPC: Full access
-S3: CreateBucket, PutObject
-IAM: PassRole
+- Terraform >= 1.0.0
+- AWS CLI >= 2.0.0
+- Git
+- Required AWS IAM Permissions:
+   - EC2: RunInstances, DescribeInstances
+   - VPC: Full access
+   - S3: CreateBucket, PutObject
+   - IAM: PassRole
 
 
 
 ## **Project Structure**
-Copyaws-infrastructure-terraform/
+```
+aws-infrastructure-terraform/
 ├── environments/
 │   ├── dev/
 │   └── prod/
@@ -24,6 +24,7 @@ Copyaws-infrastructure-terraform/
 │   ├── s3/
 │   └── vpc/
 └── README.md
+```
 ## **Features**
 
 - Modular components (VPC, EC2, S3)
@@ -33,7 +34,7 @@ Copyaws-infrastructure-terraform/
 - Security group management
 
 ## **Quick Start**
-```bashCopy
+```bash
 git clone https://github.com/funke09/aws-infrastructure-terraform.git
 cd aws-infrastructure-terraform/environments/dev
 terraform init
@@ -43,33 +44,33 @@ terraform apply
 ## **Architecture**
 ![Architecture Diagram](./Architecture-Diagram.png)
 
-VPC with public/private subnets
-EC2 instances in public subnet
-S3 bucket with private access
-Security groups and routing tables
+- VPC with public/private subnets
+- EC2 instances in public subnet
+- S3 bucket with private access
+- Security groups and routing tables
 
 ## **Security Considerations**
 
-Encrypted S3 buckets
-Private subnet isolation
-Security group least privilege
-IAM role-based access
-Regular security audits
+- Encrypted S3 buckets
+- Private subnet isolation
+- Security group least privilege
+- IAM role-based access
+- Regular security audits
 
 ## **Maintenance**
 
 ### 1. State Management
 
-Regular state backups
-Lock table usage
-State file encryption
+- Regular state backups
+- Lock table usage
+- State file encryption
 
 
 ### 2. Updates
 
-Module version control
-Regular provider updates
-Security patch management
+- Module version control
+- Regular provider updates
+- Security patch management
 
 
 
@@ -96,7 +97,7 @@ Security patch management
 ### Common issues:
 
 1. AWS Credentials:
-   ```bashCopy
+   ```bash
    aws configure
    aws sts get-caller-identity
    ```
